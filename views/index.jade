@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
+    title View Debug Report
+    // Bootstrap core CSS
+    //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css")
+    // Custom styles for this template
+  body
+    .navbar.navbar-default(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') RemoteDebug
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/') About
+            li
+              a(href='/') Contact
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          h1 Remote Debug
+          p
+          | Remote Debug is a remote debugging solution for Minecraft Plugins developed by Daniel Fanara (Shadowwolf97).
+          br
+          | Remote Debug allows you to quickly submit information to me in the event of an error in one of my plugins. Remote Debug collects pertinent information about the plugin and
+          | it's usage to help me better serve you and solve your solution.
+          p
+          | If you would like more information about this service, you can email me at my 
+          a(href="mailto:xxshadowwolf97xx@gmail.com") email 
+          | address.
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")

@@ -9,7 +9,6 @@ html(lang='en')
     link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
     title View Debug Report
     // Bootstrap core CSS
-    link(href='#{pathToAssets}/dist/css/bootstrap.min.css', rel='stylesheet')
     //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
     link(rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css")
     // Custom styles for this template
@@ -22,27 +21,66 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='#') RemoteDebug
+          a.navbar-brand(href='/') RemoteDebug
         .collapse.navbar-collapse
           ul.nav.navbar-nav
             li
-              a(href='/about') About
+              a(href='/') About
             li
               a(href='/contact') Contact
-          ul.nav.navbar-nav.pull-right
-            li
-              a(href="#") Information
-    .container
+    .container.pull-left(style="position: absolute; top: 60; left: 0;")
       .row
         .col-md-4
           .panel.panel-primary
             .panel-heading Server Information
+            table.panel-body.table
+              tr 
+                td Online Mode
+                td=data.online
+              tr
+                td Online Players
+                td=data.players
+              tr
+                td Reporting Plugin
+                td=data.plugin
+          .panel.panel-default
+            .panel-heading Installed Plugins
+            table.panel-body.table
+              each plugin, index in data.plugins
+                tr
+                  td=index
+                  td=plugin.version
+                  td=plugin.enabled
+      
+    .container
+      .row
+        .col-md-12
+          .panel.panel-default
+            .panel-heading Log file
             .panel-body
-              p
-              | Certain information about this report should be listed in this form
-        .col-md-8
-          p
-          | this goes in the ptag
+              div(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+                each line in data.log
+                  !{line}
+                  br
+      .row
+        .col-md-12
+          .panel.panel-default
+            .panel-heading Debug Information
+            .panel-body
+              div(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+                each line in data.debug
+                  !{line}
+                  br
+                  
+      .row
+        .col-md-12
+          .panel.panel-default
+            .panel-heading Error Reports
+            .panel-body
+              div(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+                each line in data.errors
+                  !{line}
+                  br
     // /.container
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
