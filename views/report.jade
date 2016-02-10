@@ -33,7 +33,7 @@ html(lang='en')
         .col-md-12
           .panel.panel-default
             .panel-heading Log file
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="log")
               each line in data.log
                 | !{line}
                 br
@@ -41,7 +41,7 @@ html(lang='en')
         .col-md-12
           .panel.panel-default
             .panel-heading Debug Information
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="debug")
               each line in data.debug
                 | !{line}
                 br
@@ -50,7 +50,7 @@ html(lang='en')
         .col-md-12
           .panel.panel-default
             .panel-heading Error Reports
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="error")
               each line in data.errors
                 | !{line}
                 br
@@ -81,3 +81,10 @@ html(lang='en')
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
+    script.
+      var log = document.getElementById("log");
+      var debug = document.getElementById("debug");
+      var error = document.getElementById("error");
+      log.scrollTop = log.scrollHeight;
+      debug.scrollTop = debug.scrollHeight;
+      error.scrollTop = error.scrollHeight;
