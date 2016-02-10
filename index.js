@@ -33,8 +33,8 @@ app.post('/report', function(req, res) {
 	dat.ip = req._ip;
 	if(dat.log)
 		dat.log = dat.log.reverse();
-	if(dat.error)
-		dat.error = dat.error.reverse();
+	if(dat.errors)
+		dat.errors = dat.errors.reverse();
 	if(dat.debug)
 		dat.debug = dat.debug.reverse();
 	fs.writeFile("reports/" + name + ".json", JSON.stringify(req.body, null, 4));
