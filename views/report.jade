@@ -27,10 +27,35 @@ html(lang='en')
             li
               a(href='/') About
             li
-              a(href='/contact') Contact
-    .container.pull-left(style="position: absolute; top: 60; left: 0;")
+              a(href='/contact') Contact      
+    .container
       .row
-        .col-md-4
+        .col-md-12
+          .panel.panel-default
+            .panel-heading Log file
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+              each line in data.log
+                | !{line}
+                br
+      .row
+        .col-md-12
+          .panel.panel-default
+            .panel-heading Debug Information
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+              each line in data.debug
+                | !{line}
+                br
+                  
+      .row
+        .col-md-12
+          .panel.panel-default
+            .panel-heading Error Reports
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+              each line in data.errors
+                | !{line}
+                br
+      .row
+        .col-md-6
           .panel.panel-primary
             .panel-heading Server Information
             table.panel-body.table
@@ -43,6 +68,7 @@ html(lang='en')
               tr
                 td Reporting Plugin
                 td=data.plugin
+        .col-md-6
           .panel.panel-default
             .panel-heading Installed Plugins
             table.panel-body.table
@@ -51,33 +77,6 @@ html(lang='en')
                   td=index
                   td=plugin.version
                   td=plugin.enabled
-      
-    .container
-      .row
-        .col-md-12
-          .panel.panel-default
-            .panel-heading Log file
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
-              each line in data.log
-                !{line}
-                br
-      .row
-        .col-md-12
-          .panel.panel-default
-            .panel-heading Debug Information
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
-              each line in data.debug
-                !{line}
-                br
-                  
-      .row
-        .col-md-12
-          .panel.panel-default
-            .panel-heading Error Reports
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
-              each line in data.errors
-                !{line}
-                br
     // /.container
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
