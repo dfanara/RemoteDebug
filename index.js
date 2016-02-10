@@ -15,6 +15,10 @@ app.post('/report', function(req, res) {
 	res.send({url: "http://rdb.shdwlf.com/" + name});
 });
 
+app.get('/:id', function(req, res){
+	console.log(req.params.id);
+});
+
 app.get('/', function(req, res) {
 	console.log('index');
 	res.send("wooho");
