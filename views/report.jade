@@ -34,7 +34,7 @@ html(lang='en')
           .panel.panel-default
             .panel-heading Log file
             .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="log")
-              each line in data.log
+              each line in data.log.reverse()
                 | !{line}
                 br
       .row
@@ -42,7 +42,7 @@ html(lang='en')
           .panel.panel-default
             .panel-heading Debug Information
             .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="debug")
-              each line in data.debug
+              each line in data.debug.reverse()
                 | !{line}
                 br
                   
@@ -51,7 +51,7 @@ html(lang='en')
           .panel.panel-default
             .panel-heading Error Reports
             .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="error")
-              each line in data.errors
+              each line in data.errors.reverse()
                 | !{line}
                 br
       .row
