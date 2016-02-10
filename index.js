@@ -31,6 +31,9 @@ app.post('/report', function(req, res) {
 	var name = rando.generate(6);
 	var dat = req.body;
 	dat.ip = req._ip;
+	dat.log = dat.log.reverse();
+	dat.error = dat.error.reverse();
+	dat.debug = dat.debug.reverse();
 	fs.writeFile("reports/" + name + ".json", JSON.stringify(req.body, null, 4));
 	res.send({url: "http://rdb.shdwlf.com/" + name});
 });
