@@ -14,7 +14,7 @@ function friendlyTimestamp() {
   return t.trim();
 }
 
-app.use(bodyParser.json({limit: '2mb'}));
+app.use(bodyParser.json({limit: '10mb'}));
 app.use(function(req, res, next) {
 	if(req.headers['cf-connecting-ip']) {
     req._ip = req.headers['cf-connecting-ip'];
