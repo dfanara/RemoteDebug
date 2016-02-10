@@ -1,5 +1,49 @@
-html
-	head
-		title="View Report"
-	body
-		h1=plugin + " - " + version
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
+    title View Debug Report
+    // Bootstrap core CSS
+    link(href='#{pathToAssets}/dist/css/bootstrap.min.css', rel='stylesheet')
+    //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css")
+    // Custom styles for this template
+  body
+    .navbar.navbar-default(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') RemoteDebug
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/about') About
+            li
+              a(href='/contact') Contact
+          ul.nav.navbar-nav.pull-right
+            li
+              a(href="#") Information
+    .container
+      .row
+        .col-md-4
+          .panel.panel-primary
+            .panel-heading Server Information
+            .panel-body
+              p
+              | Certain information about this report should be listed in this form
+        .col-md-8
+          p
+          | this goes in the ptag
+    // /.container
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
