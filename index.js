@@ -4,7 +4,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var rando = require('randomstring');
 
-app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.json({limit: '2mb'}));
 app.set('view engine', 'jade');
 
 app.post('/report', function(req, res) {
