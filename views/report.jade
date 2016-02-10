@@ -57,30 +57,27 @@ html(lang='en')
         .col-md-12
           .panel.panel-default
             .panel-heading Log file
-            .panel-body
-              div(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
-                each line in data.log
-                  !{line}
-                  br
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+              each line in data.log
+                !{line}
+                br
       .row
         .col-md-12
           .panel.panel-default
             .panel-heading Debug Information
-            .panel-body
-              div(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
-                each line in data.debug
-                  !{line}
-                  br
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+              each line in data.debug
+                !{line}
+                br
                   
       .row
         .col-md-12
           .panel.panel-default
             .panel-heading Error Reports
-            .panel-body
-              div(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
-                each line in data.errors
-                  !{line}
-                  br
+            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;")
+              each line in data.errors
+                !{line}
+                br
     // /.container
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
