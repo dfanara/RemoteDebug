@@ -8,10 +8,7 @@ html(lang='en')
     meta(name='author', content='')
     link(rel='icon', href='#{pathToAssets}/docs/favicon.ico')
     title View Debug Report
-    // Bootstrap core CSS
-    //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
     link(rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css")
-    // Custom styles for this template
   body
     .navbar.navbar-default(role='navigation')
       .container
@@ -33,7 +30,7 @@ html(lang='en')
         .col-md-12
           .panel.panel-default
             .panel-heading Log file
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="log")
+            .panel-body(style="max-height: 50em; overflow-x: auto; overflow-y: auto; white-space: nowrap;font-size: .8em;font-family: Consolas,monaco,monospace;" id="log")
               each line in data.log
                 | !{line}
                 br
@@ -41,7 +38,7 @@ html(lang='en')
         .col-md-12
           .panel.panel-default
             .panel-heading Debug Information
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="debug")
+            .panel-body(style="max-height: 50em; overflow-x: auto; overflow-y: auto; white-space: nowrap;font-size: .8em;font-family: Consolas,monaco,monospace;" id="debug")
               each line in data.debug
                 | !{line}
                 br
@@ -50,7 +47,7 @@ html(lang='en')
         .col-md-12
           .panel.panel-default
             .panel-heading Error Reports
-            .panel-body(style="max-height: 40em; overflow-x: auto; overflow-y: auto; white-space: nowrap;" id="error")
+            .panel-body(style="max-height: 50em; overflow-x: auto; overflow-y: auto; white-space: nowrap;font-size: .8em;font-family: Consolas,monaco,monospace;" id="error")
               each line in data.errors
                 | !{line}
                 br
